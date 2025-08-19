@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panic Button</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            background-color: #6d2077; /* Purple background color from the image */
+            padding: 50px;
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        h1 {
+            color: white; /* White text to contrast with the purple background */
+        }
+        #panicButton {
+            font-size: 24px;
+            padding: 15px 30px;
+            background-color: red;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 8px; /* Slightly rounded corners for the button */
+            margin-top: 20px; /* Space between the heading and button */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+        }
+        /* Card style for the content */
+        .card {
+            background-color: white;
+            border-radius: 8px; /* Rounded corners like in the image */
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for the card */
+            border-left: 5px solid red; /* Red border on the left */
+            max-width: 400px; /* Limit the card width */
+            width: 100%;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>Emergency Panic Button</h1>
+        <button id="panicButton">🚨 Press in Emergency 🚨</button>
+    </div>
+    
+    <!-- Add Siren Sound -->
+    <audio id="sirenSound" src="siren.mp3"></audio>
+
+    <script>
+        document.getElementById("panicButton").addEventListener("click", function () {
+            // Play siren sound
+            const siren = document.getElementById("sirenSound");
+            siren.play();
+
+            // Get location and send alert
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(sendAlert, showError);
+            } else {
+                alert("Geolocation is not supported by your browser.");
+            }
+        });
+
+        function sendAlert(position) {
+            const latitude = position.coords.latitude;
+            const longitude = position.coords.longitude;
+
+            fetch("http://localhost:3000/send-alert", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ latitude, longitude })
+            })
+            .then(response => response.json())
+            .then(data => alert("🚨 Alert sent successfully!"))
+            .catch(error => alert("❌ Failed to send alert!"));
+        }
+
+        function showError(error) {
+            alert("Error getting location: " + error.message);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emergency Timer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #6d2077; /* Purple background color from the image */
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background: white; /* White background for the card */
+            padding: 20px;
+            border-radius: 8px; /* Rounded corners like in the image */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for the card */
+            border-left: 5px solid red; /* Red border on the left */
+            width: 300px;
+            color: #333; /* Dark text color for contrast inside the white card */
+        }
+        h1 {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: #333; /* Dark text color for the heading */
+        }
+        label {
+            font-size: 16px;
+            color: #333; /* Dark text color for the label */
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc; /* Light border for the input */
+            border-radius: 5px;
+            font-size: 16px;
+            box-sizing: border-box; /* Ensure padding doesn't affect width */
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow for buttons */
+        }
+        .start {
+            background: #ff5733;
+            color: white;
+        }
+        .cancel {
+            background: #33ff57;
+            color: black;
+        }
+        .status {
+            margin-top: 15px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #ffcc00; /* Yellow color for status text */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Emergency Timer</h1>
+        <label>Enter time limit (in seconds):</label>
+        <input type="number" id="timeLimit" placeholder="Enter seconds" />
+        <button class="start" onclick="startTimer()">Start Timer</button>
+        <button class="cancel" onclick="cancelTimer()">Cancel Timer</button>
+        <p class="status" id="status"></p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,917 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Empowering Women Through Self-Defense</title>
+  <style>
+    :root {
+      --primary: #8e44ad;
+      --secondary: #3498db;
+      --dark: #2c3e50;
+      --light: #ecf0f1;
+      --accent: #e74c3c;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    
+    body {
+      background-color: #f5f5f5;
+      color: var(--dark);
+      line-height: 1.6;
+    }
+    
+    header {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: white;
+      text-align: center;
+      padding: 2rem 1rem;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .header-content {
+      position: relative;
+      z-index: 2;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+    }
+    
+    header p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+      opacity: 0.9;
+    }
+    
+    .cta-button {
+      display: inline-block;
+      background-color: var(--accent);
+      color: white;
+      padding: 0.8rem 2rem;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      transition: all 0.3s ease;
+      border: none;
+      cursor: pointer;
+      font-size: 1rem;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    
+    .cta-button:hover {
+      background-color: #c0392b;
+      transform: translateY(-3px);
+      box-shadow: 0 6px 10px rgba(0,0,0,0.15);
+    }
+    
+    main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem 1rem;
+    }
+    
+    .features {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+      margin: 3rem 0;
+    }
+    
+    .feature-card {
+      flex: 1;
+      min-width: 300px;
+      max-width: 350px;
+      background-color: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+    
+    .feature-card:hover {
+      transform: translateY(-10px);
+    }
+    
+    .feature-icon {
+      background-color: var(--primary);
+      color: white;
+      height: 100px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.5rem;
+    }
+    
+    .feature-content {
+      padding: 1.5rem;
+    }
+    
+    .feature-content h3 {
+      margin-bottom: 1rem;
+      color: var(--primary);
+    }
+    
+    .videos-section {
+      margin: 4rem 0;
+    }
+    
+    .section-header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    
+    .section-header h2 {
+      font-size: 2rem;
+      color: var(--primary);
+      position: relative;
+      display: inline-block;
+      margin-bottom: 1rem;
+    }
+    
+    .section-header h2::after {
+      content: '';
+      position: absolute;
+      width: 50%;
+      height: 3px;
+      background-color: var(--accent);
+      bottom: -10px;
+      left: 25%;
+    }
+    
+    .video-gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
+    }
+    
+    .video-card {
+      width: 300px;
+      background: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+    
+    .video-thumbnail {
+      position: relative;
+      height: 180px;
+      background-color: #ddd;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      overflow: hidden;
+    }
+    
+    .video-thumbnail img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    
+    .video-thumbnail:hover img {
+      transform: scale(1.1);
+    }
+    
+    .play-icon {
+      position: absolute;
+      background-color: rgba(0,0,0,0.6);
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 1.5rem;
+      z-index: 1;
+      transition: transform 0.3s ease, background-color 0.3s ease;
+    }
+    
+    .video-thumbnail:hover .play-icon {
+      background-color: var(--accent);
+      transform: scale(1.1);
+    }
+    
+    .video-info {
+      padding: 1.5rem;
+    }
+    
+    .video-info h3 {
+      margin-bottom: 0.5rem;
+      font-size: 1.1rem;
+    }
+    
+    .video-info p {
+      font-size: 0.9rem;
+      color: #777;
+    }
+    
+    .video-info .skill-level {
+      display: inline-block;
+      padding: 0.3rem 0.8rem;
+      background-color: var(--light);
+      border-radius: 30px;
+      font-size: 0.8rem;
+      margin-top: 0.5rem;
+      color: var(--dark);
+    }
+    
+    .beginner { color: #27ae60; }
+    .intermediate { color: #f39c12; }
+    .advanced { color: #c0392b; }
+    
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.8);
+      z-index: 100;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
+    
+    .modal-content {
+      background-color: white;
+      max-width: 800px;
+      width: 90%;
+      border-radius: 10px;
+      overflow: hidden;
+      position: relative;
+    }
+    
+    .close-modal {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background-color: var(--accent);
+      color: white;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 10;
+    }
+    
+    .video-container {
+      padding: 56.25% 0 0 0;
+      position: relative;
+      background-color: black;
+    }
+    
+    .video-player {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+    
+    .modal-info {
+      padding: 1.5rem;
+    }
+    
+    .modal-info h3 {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+    
+    .modal-info p {
+      margin-bottom: 1rem;
+    }
+    
+    .admin-panel {
+      background-color: white;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      margin-bottom: 4rem;
+    }
+    
+    .admin-form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    
+    .form-group label {
+      font-weight: bold;
+      color: var(--dark);
+    }
+    
+    .form-group input, .form-group textarea, .form-group select {
+      padding: 0.8rem;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      font-size: 1rem;
+    }
+    
+    .admin-buttons {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    
+    .admin-button {
+      padding: 0.8rem 1.5rem;
+      border: none;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    
+    .save-button {
+      background-color: var(--primary);
+      color: white;
+    }
+    
+    .save-button:hover {
+      background-color: #7d3c98;
+    }
+    
+    .cancel-button {
+      background-color: #ddd;
+      color: var(--dark);
+    }
+    
+    .cancel-button:hover {
+      background-color: #ccc;
+    }
+    
+    footer {
+      background-color: var(--dark);
+      color: white;
+      padding: 3rem 1rem;
+      text-align: center;
+      margin-top: 4rem;
+    }
+    
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+    
+    .footer-column {
+      flex: 1;
+      min-width: 250px;
+      margin-bottom: 2rem;
+      text-align: left;
+      padding: 0 1rem;
+    }
+    
+    .footer-column h3 {
+      margin-bottom: 1.5rem;
+      position: relative;
+      display: inline-block;
+    }
+    
+    .footer-column h3::after {
+      content: '';
+      position: absolute;
+      width: 50%;
+      height: 2px;
+      background-color: var(--accent);
+      bottom: -5px;
+      left: 0;
+    }
+    
+    .footer-links {
+      list-style: none;
+    }
+    
+    .footer-links li {
+      margin-bottom: 0.8rem;
+    }
+    
+    .footer-links a {
+      color: var(--light);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    
+    .footer-links a:hover {
+      color: var(--accent);
+    }
+    
+    .social-links {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    
+    .social-link {
+      display: inline-block;
+      width: 40px;
+      height: 40px;
+      background-color: rgba(255,255,255,0.1);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+    }
+    
+    .social-link:hover {
+      background-color: var(--accent);
+      transform: translateY(-5px);
+    }
+    
+    .copyright {
+      width: 100%;
+      margin-top: 2rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255,255,255,0.1);
+    }
+    
+    .admin-toggle {
+      background-color: var(--dark);
+      color: white;
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      cursor: pointer;
+      z-index: 10;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+    
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2rem;
+      }
+      
+      header p {
+        font-size: 1rem;
+      }
+      
+      .feature-card {
+        min-width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-content">
+      <h1>Empowering Women Through Self-Defense</h1>
+      <p>Learn practical strategies, techniques, and situational awareness to enhance your personal safety and confidence.</p>
+      <button class="cta-button" id="start-learning">Start Learning</button>
+    </div>
+  </header>
+  
+  <main>
+    <div class="features">
+      <div class="feature-card">
+        <div class="feature-icon">💪</div>
+        <div class="feature-content">
+          <h3>Practical Techniques</h3>
+          <p>Learn effective physical techniques that are designed specifically for women's bodies and strengths. No prior experience needed.</p>
+        </div>
+      </div>
+      
+      <div class="feature-card">
+        <div class="feature-icon">🧠</div>
+        <div class="feature-content">
+          <h3>Situational Awareness</h3>
+          <p>Develop the mental skills to recognize potential threats, avoid dangerous situations, and make quick, effective decisions.</p>
+        </div>
+      </div>
+      
+      <div class="feature-card">
+        <div class="feature-icon">✨</div>
+        <div class="feature-content">
+          <h3>Build Confidence</h3>
+          <p>Gain the confidence to move through the world with assurance. Transform fear into empowerment and strength.</p>
+        </div>
+      </div>
+    </div>
+    
+    <section class="admin-panel" id="admin-panel" style="display: none;">
+      <div class="section-header">
+        <h2>Manage Your Videos</h2>
+        <p>Add, edit, or remove your self-defense training videos</p>
+      </div>
+      
+      <form class="admin-form" id="video-form">
+        <div class="form-group">
+          <label for="video-title">Video Title</label>
+          <input type="text" id="video-title" placeholder="Enter video title">
+        </div>
+        
+        <div class="form-group">
+          <label for="video-description">Video Description</label>
+          <textarea id="video-description" rows="3" placeholder="Enter a detailed description"></textarea>
+        </div>
+        
+        <div class="form-group">
+          <label for="video-thumbnail">Thumbnail URL (leave blank to use YouTube default)</label>
+          <input type="text" id="video-thumbnail" placeholder="https://example.com/your-thumbnail.jpg">
+        </div>
+        
+        <div class="form-group">
+          <label for="video-youtube-id">YouTube Video ID</label>
+          <input type="text" id="video-youtube-id" placeholder="e.g. M4_8PoRQP8w">
+        </div>
+        
+        <div class="form-group">
+          <label for="video-level">Skill Level</label>
+          <select id="video-level">
+            <option value="beginner">Beginner</option>
+            <option value="intermediate">Intermediate</option>
+            <option value="advanced">Advanced</option>
+          </select>
+        </div>
+        
+        <div class="form-group">
+          <label for="video-duration">Duration (minutes)</label>
+          <input type="number" id="video-duration" min="1" placeholder="Duration in minutes">
+        </div>
+        
+        <input type="hidden" id="video-id" value="">
+        
+        <div class="admin-buttons">
+          <button type="submit" class="admin-button save-button">Add Video</button>
+          <button type="button" class="admin-button cancel-button" id="cancel-button">Cancel</button>
+        </div>
+      </form>
+    </section>
+    
+    <section class="videos-section" id="training-videos">
+      <div class="section-header">
+        <h2>Training Videos</h2>
+        <p>Follow along with our expert instructors to learn essential self-defense skills</p>
+      </div>
+      
+      <div class="video-gallery" id="video-gallery">
+        <!-- Videos will be dynamically populated here -->
+      </div>
+    </section>
+  </main>
+  
+  <footer>
+    <div class="footer-content">
+      <div class="footer-column">
+        <h3>Quick Links</h3>
+        <ul class="footer-links">
+          <li><a href="#">Home</a></li>
+          <li><a href="#training-videos">Training Videos</a></li>
+          <li><a href="#">Live Classes</a></li>
+          <li><a href="#">Resources</a></li>
+          <li><a href="#">About Us</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-column">
+        <h3>Contact Us</h3>
+        <ul class="footer-links">
+          <li>Email: info@womenselfdefense.com</li>
+          <li>Phone: (555) 123-4567</li>
+          <li>Address: 123 Safety St, Empowerment City</li>
+        </ul>
+      </div>
+      
+      <div class="footer-column">
+        <h3>Connect With Us</h3>
+        <p>Follow us on social media for daily tips, success stories, and updates.</p>
+        <div class="social-links">
+          <a href="#" class="social-link">FB</a>
+          <a href="#" class="social-link">IG</a>
+          <a href="#" class="social-link">TW</a>
+          <a href="#" class="social-link">YT</a>
+        </div>
+      </div>
+      
+      <div class="copyright">
+        <p>© 2025 Women's Self-Defense Training. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+  
+  <div class="modal" id="video-modal">
+    <div class="modal-content">
+      <div class="close-modal" id="close-modal">✕</div>
+      <div class="video-container">
+        <iframe class="video-player" id="video-player" allowfullscreen></iframe>
+      </div>
+      <div class="modal-info" id="modal-info">
+        <!-- Video info will be populated here -->
+      </div>
+    </div>
+  </div>
+  
+  <div class="admin-toggle" id="admin-toggle">⚙️</div>
+  
+  <script>
+    let videos = [
+      {
+        id: 1,
+        title: "Basics of Self-Defense",
+        description: "Learn the foundational principles and stances that form the basis of effective self-defense.",
+        thumbnail: "",
+        youtubeId: "M4_8PoRQP8w",
+        level: "beginner",
+        duration: 15
+      },
+      {
+        id: 2,
+        title: "Breaking Free from Grabs",
+        description: "Practical techniques to escape from common holds and grabs using leverage, not strength.",
+        thumbnail: "",
+        youtubeId: "KVpxP3ZZtAc",
+        level: "beginner",
+        duration: 20
+      },
+      {
+        id: 3,
+        title: "Striking Techniques",
+        description: "Learn effective striking methods targeting vulnerable areas to create an opportunity to escape.",
+        thumbnail: "",
+        youtubeId: "q1pBBRi3XF8",
+        level: "intermediate",
+        duration: 25
+      }
+    ];
+    
+    // Load videos from localStorage if available
+    function loadVideos() {
+      const savedVideos = localStorage.getItem('selfDefenseVideos');
+      if (savedVideos) {
+        videos = JSON.parse(savedVideos);
+      }
+      renderVideos();
+    }
+    
+    // Save videos to localStorage
+    function saveVideos() {
+      localStorage.setItem('selfDefenseVideos', JSON.stringify(videos));
+    }
+    
+    // Render videos to the gallery
+    function renderVideos() {
+      const videoGallery = document.getElementById('video-gallery');
+      videoGallery.innerHTML = '';
+      
+      videos.forEach(video => {
+        const videoCard = document.createElement('div');
+        videoCard.className = 'video-card';
+        
+        // Use custom thumbnail if provided, otherwise use YouTube default
+        const thumbnailUrl = video.thumbnail || `https://img.youtube.com/vi/${video.youtubeId}/hqdefault.jpg`;
+        
+        videoCard.innerHTML = `
+          <div class="video-thumbnail" data-video-id="${video.id}">
+            <img src="${thumbnailUrl}" alt="${video.title}">
+            <div class="play-icon">▶</div>
+          </div>
+          <div class="video-info">
+            <h3>${video.title}</h3>
+            <p>${video.description}</p>
+            <span class="skill-level ${video.level}">${capitalize(video.level)}</span>
+            <div class="admin-controls" style="margin-top: 10px; display: none;">
+              <button class="edit-video" data-id="${video.id}" style="background: #3498db; color: white; border: none; padding: 5px 10px; border-radius: 3px; margin-right: 5px; cursor: pointer;">Edit</button>
+              <button class="delete-video" data-id="${video.id}" style="background: #e74c3c; color: white; border: none; padding: 5px 10px; border-radius: 3px; cursor: pointer;">Delete</button>
+            </div>
+          </div>
+        `;
+        
+        videoGallery.appendChild(videoCard);
+      });
+      
+      // Add event listeners to video thumbnails
+      attachVideoListeners();
+    }
+    
+    // Capitalize first letter
+    function capitalize(string) {
+      return string.charAt(0).toUpperCase() + string.slice(1);
+    }
+    
+    // Attach event listeners to video thumbnails
+    function attachVideoListeners() {
+      const videoThumbnails = document.querySelectorAll('.video-thumbnail');
+      const videoModal = document.getElementById('video-modal');
+      const closeModal = document.getElementById('close-modal');
+      const videoPlayer = document.getElementById('video-player');
+      const modalInfo = document.getElementById('modal-info');
+      
+      videoThumbnails.forEach(thumbnail => {
+        thumbnail.addEventListener('click', () => {
+          const videoId = parseInt(thumbnail.dataset.videoId);
+          const video = videos.find(v => v.id === videoId);
+          
+          if (video) {
+            videoPlayer.src = `https://www.youtube.com/embed/${video.youtubeId}`;
+            modalInfo.innerHTML = `
+              <h3>${video.title}</h3>
+              <p>${video.description}</p>
+              <p><strong>Level:</strong> ${capitalize(video.level)} | <strong>Duration:</strong> ${video.duration} minutes</p>
+            `;
+            
+            videoModal.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+          }
+        });
+      });
+      
+      closeModal.addEventListener('click', () => {
+        videoModal.style.display = 'none';
+        videoPlayer.src = '';
+        document.body.style.overflow = 'auto';
+      });
+      
+      // Close modal when clicking outside content
+      videoModal.addEventListener('click', (e) => {
+        if (e.target === videoModal) {
+          videoModal.style.display = 'none';
+          videoPlayer.src = '';
+          document.body.style.overflow = 'auto';
+        }
+      });
+      
+      // Add event listeners for edit and delete buttons
+      const editButtons = document.querySelectorAll('.edit-video');
+      const deleteButtons = document.querySelectorAll('.delete-video');
+      
+      editButtons.forEach(button => {
+        button.addEventListener('click', (e) => {
+          e.stopPropagation();
+          const videoId = parseInt(button.dataset.id);
+          editVideo(videoId);
+        });
+      });
+      
+      deleteButtons.forEach(button => {
+        button.addEventListener('click', (e) => {
+          e.stopPropagation();
+          const videoId = parseInt(button.dataset.id);
+          if (confirm('Are you sure you want to delete this video?')) {
+            deleteVideo(videoId);
+          }
+        });
+      });
+    }
+    
+    // Add a new video
+    function addVideo(video) {
+      // Generate a new ID based on the highest existing ID
+      const newId = videos.length > 0 ? Math.max(...videos.map(v => v.id)) + 1 : 1;
+      video.id = newId;
+      videos.push(video);
+      saveVideos();
+      renderVideos();
+    }
+    
+    // Edit an existing video
+    function editVideo(id) {
+      const video = videos.find(v => v.id === id);
+      if (video) {
+        // Populate form with video data
+        document.getElementById('video-title').value = video.title;
+        document.getElementById('video-description').value = video.description;
+        document.getElementById('video-thumbnail').value = video.thumbnail;
+        document.getElementById('video-youtube-id').value = video.youtubeId;
+        document.getElementById('video-level').value = video.level;
+        document.getElementById('video-duration').value = video.duration;
+        document.getElementById('video-id').value = video.id;
+        
+        // Change submit button text
+        document.querySelector('.save-button').textContent = 'Update Video';
+        
+        // Show admin panel
+        document.getElementById('admin-panel').style.display = 'block';
+        
+        // Scroll to admin panel
+        document.getElementById('admin-panel').scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+    
+    // Delete a video
+    function deleteVideo(id) {
+      videos = videos.filter(v => v.id !== id);
+      saveVideos();
+      renderVideos();
+    }
+    
+    // Handle form submission
+    document.getElementById('video-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const videoId = document.getElementById('video-id').value;
+      const videoData = {
+        title: document.getElementById('video-title').value,
+        description: document.getElementById('video-description').value,
+        thumbnail: document.getElementById('video-thumbnail').value,
+        youtubeId: document.getElementById('video-youtube-id').value,
+        level: document.getElementById('video-level').value,
+        duration: parseInt(document.getElementById('video-duration').value) || 0
+      };
+      
+      if (!videoData.title || !videoData.description || !videoData.youtubeId) {
+        alert('Please fill in all required fields (title, description, and YouTube ID)');
+        return;
+      }
+      
+      if (videoId) {
+        // Update existing video
+        const index = videos.findIndex(v => v.id === parseInt(videoId));
+        if (index !== -1) {
+          videos[index] = { ...videos[index], ...videoData };
+        }
+      } else {
+        // Add new video
+        addVideo(videoData);
+      }
+      
+      // Reset form
+      resetForm();
+      
+      // Hide admin panel
+      document.getElementById('admin-panel').style.display = 'none';
+      
+      // Save and render videos
+      saveVideos();
+      renderVideos();
+    });
+    
+    // Reset form
+    function resetForm() {
+      document.getElementById('video-form').reset();
+      document.getElementById('video-id').value = '';
+      document.querySelector('.save-button').textContent = 'Add Video';
+    }
+    
+    // Handle cancel button
+    document.getElementById('cancel-button').addEventListener('click', function() {
+      resetForm();
+      document.getElementById('admin-panel').style.display = 'none';
+    });
+    
+    // Toggle admin panel
+    document.getElementById('admin-toggle').addEventListener('click', function() {
+      const adminPanel = document.getElementById('admin-panel');
+      const adminControls = document.querySelectorAll('.admin-controls');
+      
+      if (adminPanel.style.display === 'none') {
+        adminPanel.style.display = 'block';
+        adminControls.forEach(control => control.style.display = 'block');
+      } else {
+        adminPanel.style.display = 'none';
+        adminControls.forEach(control => control.style.display = 'none');
+        resetForm();
+      }
+    });
+    
+    // Start learning button
+    document.getElementById('start-learning').addEventListener('click', function() {
+      document.getElementById('training-videos').scrollIntoView({ behavior: 'smooth' });
+    });
+    
+    // Initialize the page
+    document.addEventListener('DOMContentLoaded', function() {
+      loadVideos();
+    });
+  </script>
+</body>
+</html>
