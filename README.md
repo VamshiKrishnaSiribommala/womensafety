@@ -1,6 +1,4 @@
-<p align="center">
-  <img src="https://via.placeholder.com/900x250?text=🌸+Women+Safety+Project+Banner" alt="Project Banner"/>
-</p>
+
 
 <h1 align="center">🌸 Women Safety Project</h1>
 
@@ -41,15 +39,12 @@
 
 ---
 
-## 🎬 Demo / Screenshots
-
 <p align="center">
-  <img src="https://via.placeholder.com/300x500?text=Login+Page" alt="Login"/>
-  <img src="https://via.placeholder.com/300x500?text=SOS+Activation" alt="SOS"/>
-  <img src="https://via.placeholder.com/300x500?text=Nearby+Help+Map" alt="Map"/>
+  <a href="https://womensafety-xaus.onrender.com/" target="_blank">
+    <img src="https://img.shields.io/badge/🚀 Live%20Demo-Visit%20Now-brightgreen?style=for-the-badge&logo=googlechrome&logoColor=white" alt="Live Demo"/>
+  </a>
 </p>
 
-> Add GIFs to showcase live SOS alerts, auto-call, and location tracking.
 
 ---
 
