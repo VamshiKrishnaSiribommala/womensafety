@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://via.placeholder.com/800x200?text=Women+Safety+Project+Banner" alt="Project Banner"/>
+  <img src="https://via.placeholder.com/900x250?text=🌸+Women+Safety+Project+Banner" alt="Project Banner"/>
 </p>
 
 <h1 align="center">🌸 Women Safety Project</h1>
@@ -7,20 +7,22 @@
 <p align="center">
   <a href="#"><img src="https://img.shields.io/badge/Status-Active-brightgreen" alt="Status"/></a>
   <a href="#"><img src="https://img.shields.io/badge/License-MIT-blue" alt="License"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Node.js-%23339933.svg?style=flat&logo=node.js&logoColor=white"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Node.js-339933?style=flat&logo=node.js&logoColor=white"/></a>
   <a href="#"><img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat&logo=javascript&logoColor=black"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Contributions-Welcome-yellow" alt="Contributions"/></a>
 </p>
 
 ---
 
 ## 💖 About the Project
 
-**Women Safety Project** is a smart web application that ensures **women’s safety in real-time** by providing:  
-- SOS alerts  
-- Automatic emergency calls  
-- Audio/video recording  
-- Location tracking  
-- Crowdsourced nearby help  
+**Women Safety Project** is a **smart web application** designed to protect women in real-time with features like:
+
+- 🆘 **SOS alerts**  
+- 📞 **Automatic emergency calls**  
+- 🎥 **Audio/Video recording**  
+- 🌐 **Nearby help alerts**  
+- 🔒 **Secure data storage**
 
 > Empowering women with technology for a safer tomorrow.
 
@@ -30,12 +32,12 @@
 
 | Feature | Description | Status |
 |---------|-------------|--------|
-| 🆘 **SOS Alert** | Send instant alerts with live location to trusted contacts | ✅ Live |
-| 📞 **Auto Emergency Call** | Automatically call emergency contacts if unresponsive | ✅ Live |
-| 🎥 **Audio/Video Recording** | Capture surroundings and store securely | 🔄 Working |
-| 🌐 **Nearby Help** | Notify nearby volunteers for immediate assistance | 🔄 Working |
-| 🔒 **Secure Storage** | Encrypted storage for privacy | ✅ Live |
-| 👩‍💻 **Google Login** | Quick login via Google account | ✅ Live |
+| 🆘 SOS Alert | Send instant alerts with live location | ✅ Active |
+| 📞 Auto Emergency Call | Automatically call emergency contacts | ✅ Active |
+| 🎥 Audio/Video Recording | Capture surroundings and store securely | 🔄 Working |
+| 🌐 Nearby Help | Notify nearby volunteers for quick assistance | 🔄 Working |
+| 🔒 Secure Storage | Data is encrypted and safely stored | ✅ Active |
+| 👩‍💻 Google Login | Quick login via Google account | ✅ Active |
 
 ---
 
@@ -47,17 +49,17 @@
   <img src="https://via.placeholder.com/300x500?text=Nearby+Help+Map" alt="Map"/>
 </p>
 
-> Replace these with your actual screenshots or GIFs to show real functionality.
+> Add GIFs to showcase live SOS alerts, auto-call, and location tracking.
 
 ---
 
 ## ⚙️ How It Works
 
-1. **Register/Login** – Sign up with email/mobile or Google.  
-2. **Trigger SOS** – Press the SOS button or say a help keyword.  
-3. **Alert Contacts** – Emergency contacts receive location-based SMS alerts.  
+1. **Register/Login** – Sign up via email/mobile or Google account.  
+2. **Trigger SOS** – Press SOS button or say a help keyword.  
+3. **Alert Contacts** – Emergency contacts receive SMS with location.  
 4. **Record Evidence** – Audio/video captured automatically.  
-5. **Nearby Help** – Nearby volunteers get notifications instantly.  
+5. **Nearby Help** – Notifies nearby volunteers immediately.  
 
 ---
 
@@ -76,17 +78,9 @@
 
 ---
 
-## 🖥️ Installation
+## 🚀 Installation & Run Server
 
+### 2️⃣ Clone Repository
 ```bash
-# Clone the repository
 git clone https://github.com/yourusername/women-safety.git
-
-# Navigate to the project folder
 cd women-safety
-
-# Install dependencies
-npm install
-
-# Start the server
-npm start
